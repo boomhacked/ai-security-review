@@ -1,4 +1,4 @@
-# AI Vendor Security & Risk Assessment Questionnaire
+# AI Vendor Security & Risk Assessment
 
 This questionnaire is built for a security analyst/engineer evaluating a third-party AI tool vendor during onboarding or renewal. It has two layers.
 
