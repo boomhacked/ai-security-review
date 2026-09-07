@@ -38,7 +38,7 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 
 > **Why this matters:** a vendor with no accountable owner for AI risk typically has no process for catching AI-specific issues before they ship, regardless of how good their general security program is.
 
-**1.2** Do you maintain a written AI risk management program aligned to a recognized framework (for example, the NIST AI Risk Management Framework, or an equivalent internal framework)? Can you share a summary or attestation?
+**1.2** Do you maintain a written AI risk management program aligned to a recognized framework (for example, the NIST AI Risk Management Framework, or an equivalent internal framework)?
 
 **1.3** Have you conducted, or had a third party conduct, a threat model of your AI system's architecture? Can you describe the categories of threats it identified?
 
@@ -48,7 +48,7 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 
 **1.5** Do you maintain a model card, system card, or equivalent documentation describing your AI system's intended use, known limitations, and out-of-scope use cases? Can you provide it?
 
-**1.6** Who are your key AI-related subprocessors and subcontractors (foundation model providers, hosting/cloud providers, vector database providers, embedding providers, evaluation/monitoring tool vendors)? Do you maintain and proactively update a subprocessor list?
+**1.6** Who are your key AI-related subprocessors and subcontractors (foundation model providers, hosting/cloud providers, vector database providers, embedding providers, evaluation/monitoring tool vendors)?
 
 > **Why this matters:** nearly every AI vendor is itself a downstream consumer of one or more other AI vendors. Your actual data exposure often runs three or four hops deep. You need the full chain, not just the immediate vendor.
 
@@ -83,7 +83,7 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 
 **2.8** If your product ever produces an output that includes or resembles content from another customer's data, or from a third party's copyrighted or proprietary material, what is your incident process, and do you offer contractual indemnification for that scenario? (LLM02)
 
-**2.9** Do you conduct or commission independent privacy impact assessments or data protection impact assessments (DPIAs) for your AI processing activities? Can these be shared or summarized?
+**2.9** Do you conduct or commission independent privacy impact assessments or data protection impact assessments (DPIAs) for your AI processing activities?
 
 </details>
 
@@ -94,7 +94,7 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 
 > **Why this matters:** indirect injection is the higher-risk variant for most enterprise deployments, since it does not require the attacker to have any access to your product at all, only the ability to place content somewhere your AI system will later read it.
 
-**3.2** Describe your input validation and output filtering/guardrail approach. Do you use a layered approach (e.g., cheap pattern-based filtering first, escalating to more expensive semantic or model-based classification), and what is your measured false-positive and false-negative rate on adversarial test sets? (LLM01, LLM10)
+**3.2** Describe your input validation and output filtering/guardrail approach. Do you use a layered approach (e.g., pattern-based filtering first, escalating to more expensive semantic or model-based classification), and what is your measured false-positive and false-negative rate on adversarial test sets? (LLM01, LLM10)
 
 **3.3** Has your system been tested against known jailbreak technique categories (roleplay/persona framing, multi-turn conditioning, obfuscation/encoding, and similar)? What was the outcome, and how frequently is this testing repeated as new techniques emerge? (LLM01)
 
@@ -105,8 +105,6 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 **3.6** If your product retains conversational memory or context across sessions, what prevents an attacker from poisoning that persistent memory in one session to influence behavior in a later, unrelated session? (LLM01)
 
 **3.7** Do you log and monitor for anomalous prompts or usage patterns that might indicate an extraction, enumeration, or abuse attempt against the model itself, distinct from general application security monitoring?
-
-**3.8** If your system uses any explainability tooling (for example, feature-attribution methods) to support debugging, audit, or customer-facing transparency, describe what it covers and where its coverage is known to be limited.
 
 </details>
 
@@ -164,8 +162,6 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 
 **7.5** Have you evaluated your system for bias or disparate impact across protected classes? Can you share the methodology and results, and how frequently this evaluation is repeated?
 
-**7.6** What audit rights does our contract grant us: can we request evidence of controls, conduct or commission a security assessment, or request relevant portions of penetration test results, on a recurring basis rather than only at initial onboarding?
-
 </details>
 
 <details>
@@ -174,8 +170,6 @@ Where a question maps clearly to a specific 2026 OWASP LLM risk category, the co
 **8.1** If your primary foundation model provider became unavailable (outage, contract termination, deprecation of the model version you rely on), what is your continuity plan, and how would that affect the behavior, quality, or availability of our service?
 
 **8.2** What is your model versioning and rollback process? If an update to the underlying model (yours or a third party's) causes a regression in behavior or a new security issue, how quickly can you roll back, and will we be notified before or after a model version change goes live?
-
-**8.3** In the event your company is acquired, ceases operations, or divests this product line, what happens to our data, our fine-tuned model artifacts (if any), and our ability to export our data in a usable format?
 
 </details>
 
@@ -238,7 +232,7 @@ Most vendors match more than one: a product might combine RAG with a third-party
 
 **B.1** Which foundation model provider(s) and specific model version(s) do you call, and do you have a documented data processing agreement with that provider that flows down our data protection requirements? (LLM04)
 
-**B.2** Does the foundation model provider retain, log, or use the data you send them (our prompts and any injected context) for any purpose, including abuse monitoring, model improvement, or training? Have you enabled any available zero-retention, opt-out, or enterprise-tier data protections offered by that provider, and can you prove it (configuration evidence, not just a policy statement)? (LLM02)
+**B.2** Does the foundation model provider retain, log, or use the data you send them (our prompts and any injected context) for any purpose, including abuse monitoring, model improvement, or training? Have you enabled any available zero-retention, opt-out, or enterprise-tier data protections offered by that provider? (LLM02)
 
 **B.3** If the foundation model provider changes their model version, deprecates the version you rely on, or changes their data handling policy, how are you notified, and how do you flow that change through to us? (LLM04)
 
