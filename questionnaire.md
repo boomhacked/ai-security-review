@@ -215,17 +215,19 @@ Most vendors match more than one: a product might combine RAG with a third-party
 
 **A.2** Who or what can add, modify, or delete documents in the knowledge base/vector store that your system retrieves from? Is there authentication and authorization on ingestion, or can any upstream data source write into the index unchecked? (LLM05, LLM09)
 
-> **Why this matters:** if ingestion is unauthenticated or unvalidated, an attacker who can place a single document anywhere the system indexes from (a shared drive, a public wiki, an inbound email) can poison the retrieval corpus and influence every subsequent query that happens to retrieve it, without ever touching your product directly.
+> **Why this matters:** if ingestion is unauthenticated or unvalidated, an attacker who can place a single document anywhere the system indexes from (a shared drive, a public wiki, an inbound email) can poison the knowledge base and influence every subsequent query that happens to retrieve it, without ever touching your product directly.
 
 **A.3** What content validation or sanitization is applied to documents before they are indexed: do you scan for hidden/invisible instructions embedded in retrieved content, unusual formatting designed to manipulate the model, or other injection patterns before that content ever reaches the model's context? (LLM01, LLM09)
 
-**A.4** If our data is used as source material in the retrieval corpus, is it embedded and indexed separately from other customers' data, and is the embedding model itself shared across tenants? Could our data's embeddings be retrievable, even indirectly, by another tenant's queries? (LLM09)
+**A.4** If our data is used as source material in the knowledge base, is it embedded and indexed separately from other customers' data, and is the embedding model itself shared across tenants? Could our data's embeddings be retrievable, even indirectly, by another tenant's queries? (LLM09)
 
-**A.5** What monitoring exists to detect an unusual shift in what gets retrieved for a given query pattern, a sign that the corpus may have been poisoned or that a malicious document is being over-retrieved across unrelated queries? (LLM05, LLM09)
+**A.5** What monitoring exists to detect an unusual shift in what gets retrieved for a given query pattern, a sign that the knowledge base may have been poisoned or that a malicious document is being over-retrieved across unrelated queries? (LLM05, LLM09)
 
-**A.6** If we ask you to remove a document from the retrieval corpus, how quickly does that take effect, and does removal also purge the corresponding cached embeddings and any downstream caches? (LLM09)
+**A.6** Does your ingestion pipeline automatically detect and remove content from the index when the source document is deleted, moved, or has its access permissions revoked? (LLM09)
 
-**A.7** Does the retrieval pipeline enforce document-level or field-level access control at query time (so a user only retrieves content they are authorized to see), or is access control applied only at the collection/index level? (LLM02, LLM09)
+**A.7** If we need to force immediate removal of a specific document from the index (for example, during an incident), what is that process, how quickly does it take effect, and does it also purge cached embeddings and any downstream caches? (LLM09)
+
+**A.8** Does the retrieval pipeline enforce document-level or field-level access control at query time (so a user only retrieves content they are authorized to see), or is access control applied only at the collection/index level? (LLM02, LLM09)
 
 </details>
 
