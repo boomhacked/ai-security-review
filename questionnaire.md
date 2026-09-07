@@ -1,12 +1,14 @@
-# AI Vendor Security & Risk Assessment
+# AI Security Review Questionnaire
 
-This questionnaire is built for a security analyst/engineer evaluating a third-party AI tool vendor during onboarding or renewal. It has two layers.
+This questionnaire is built for a security analyst or engineer evaluating a third-party AI tool vendor during onboarding or renewal, or reviewing and threat-modeling an AI system being built or deployed within your own organization. It has two layers.
 
-**Universal Questions** apply to every AI vendor regardless of how their system is built. Ask these every time.
+Throughout, "vendor" refers to whoever is answering these questions, a third-party AI vendor, or your own engineering or platform team if you're reviewing a system built in-house. The questions and structure work the same either way.
 
-**Architecture-Specific Questions** branch based on how the vendor's AI system is actually designed. Section 9 is a classification checklist. Most vendors match more than one pattern (a product might combine RAG with a third-party API model, for example), so answer Section 9 first and then open every branch it points to.
+**Universal Questions** apply to every AI vendor or system regardless of how it's built. Ask these every time.
 
-Each question can be asked directly in a written questionnaire, an RFP, or a live interview. Where useful, a "Why this matters" note explains the risk being probed. Treat a vendor's inability to answer, a vague or evasive answer, or an answer that reveals they've never considered the question, as a risk signal in itself.
+**Architecture-Specific Questions** branch based on how the system is actually designed. Section 9 is a classification checklist. Most vendors or systems match more than one pattern (a product might combine RAG with a third-party API model, for example), so answer Section 9 first and then open every branch it points to.
+
+Each question can be asked directly in a written questionnaire, an RFP, a live interview, or worked through internally as a self-assessment. Where useful, a "Why this matters" note explains the risk being probed. Treat an inability to answer, a vague or evasive answer, or an answer that reveals the question has never been considered, as a risk signal in itself.
 
 Click a section heading below to expand it.
 
