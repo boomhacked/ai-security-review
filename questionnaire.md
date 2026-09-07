@@ -1,4 +1,4 @@
-# AI Security Review Questionnaire
+# AI Security Review
 
 This questionnaire is built for a security analyst or engineer evaluating a third-party AI tool vendor during onboarding or renewal, or reviewing and threat-modeling an AI system being built or deployed within your own organization. It has two layers.
 
